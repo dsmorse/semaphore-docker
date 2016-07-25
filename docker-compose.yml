@@ -1,0 +1,21 @@
+mysql:
+  image: mysql
+  environment:
+    MYSQL_DATABASE: 'semaphore'
+    MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+  hostname: mysql
+  expose:
+    - 3306
+  volumes:
+    - /opt/issinc/global/data/mysql/:/var/lib/mysql
+
+semaphore:
+  image: semaphore:latest
+  expose:
+    - 3000
+  ports:
+    - 8080:3000
+  links:
+    - mysql:mysql
+#  volumes:
+#    - /opt/issinc/global/data/semaphore/:/opt/issinc/global/data/semaphore

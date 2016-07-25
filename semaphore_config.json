@@ -1,0 +1,13 @@
+{
+ 	"mysql": {
+ 		"host": "MYSQL_IP_ADDR:3306",
+ 		"user": "root",
+ 		"pass": "",
+ 		"name": "semaphore"
+ 	},
+ 	"port": "",
+ 	"bugsnag_key": "",
+ 	"tmp_path": "/opt/issinc/global/data/semaphore",
+ 	"cookie_hash": "/zAv5lqvW6IiEPMSMZsZGbsqstH/Fr6bJSFHqrhSH8w=",
+ 	"cookie_encryption": "+8CxrlBhVzox2oDnjFEmO6hxX0EvWK3mZ9vizk14k70="
+ }
