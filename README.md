@@ -12,8 +12,9 @@ This project is a Docker wrapper around ansible-semaphore https://github.com/ans
  You can also just build the semaphore-docker images
  
      docker build -t semaphore-docker .
-
      
  Or you can pull the image from docker hub
  
     docker pull dsmorse/semaphore-docker
+    
+ optionally you can mount a volume into the container at /opt/data/semaphore/ to store all state on the docker host

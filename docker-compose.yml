@@ -7,7 +7,7 @@ mysql:
   expose:
     - 3306
   volumes:
-    - /opt/issinc/global/data/mysql/:/var/lib/mysql
+    - /opt/data/mysql/:/var/lib/mysql
 
 semaphore:
   #build: .
@@ -19,4 +19,4 @@ semaphore:
   links:
     - mysql:mysql
 #  volumes:
-#    - /opt/issinc/global/data/semaphore/:/opt/issinc/global/data/semaphore
+#    - /opt/data/semaphore/:/opt/data/semaphore
