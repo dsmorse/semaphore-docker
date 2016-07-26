@@ -1,0 +1,10 @@
+MYSQL_IP_ADDR:3306
+root
+
+semaphore
+/opt/data/semaphore
+yes
+admin
+admn@domain.tld
+Admin User
+password

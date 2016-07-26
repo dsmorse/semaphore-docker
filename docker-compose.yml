@@ -10,7 +10,8 @@ mysql:
     - /opt/issinc/global/data/mysql/:/var/lib/mysql
 
 semaphore:
-  image: semaphore:latest
+  #build: .
+  image: dsmorse/semaphore-docker:latest
   expose:
     - 3000
   ports:

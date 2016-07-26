@@ -4,6 +4,8 @@ LABEL \
 	name="Ansible Semaphore" \
 	version="2.0.4"
 
+ADD target_filesystem/ /
+
 RUN yum -y install \
 			ansible \
 			git \
@@ -11,12 +13,15 @@ RUN yum -y install \
 			&& \
 		wget "https://github.com/ansible-semaphore/semaphore/releases/download/v2.0.4/semaphore_linux_amd64" && \
 		mv semaphore_linux_amd64 /usr/bin/semaphore && \
-		chmod +x  /usr/bin/semaphore
-
-ADD semaphore_config.json /opt/data/semaphore/semaphore_config.json
+		chmod +x  /usr/bin/semaphore && \
+		chmod +x  /opt/data/semaphore/start.sh && \
+		touch /firstrun
 
 # Ports
 EXPOSE 3000
 
+WORKDIR /opt/data/semaphore
+
+
 # Default Command
-CMD ["/bin/bash", "-c", "sed -i s/MYSQL_IP_ADDR/${MYSQL_PORT_3306_TCP_ADDR}/ /opt/data/semaphore/semaphore_config.json && semaphore -config /opt/data/semaphore/semaphore_config.json"]
+CMD ["/bin/bash", "-c", "/opt/data/semaphore/start.sh"]

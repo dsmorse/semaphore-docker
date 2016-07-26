@@ -5,10 +5,15 @@ This project is a Docker wrapper around ansible-semaphore https://github.com/ans
 
 
 ## NOTES
- A docker compose file is provided, to bring up the entire application.  Current workflow requires that the mysql db be popuplated by running the command
+ A docker compose file is provided, to bring up the entire application.  You can build and deploy:
  
-     semaphore -setup
+     docker-compose up
      
- in order to do this in a docker environment your command might look like this:
+ You can also just build the semaphore-docker images
  
-     docker run -it --link semaphore_mysql_1:mysql semaphore semaphore -setup
+     docker build -t semaphore-docker .
+
+     
+ Or you can pull the image from docker hub
+ 
+    docker pull dsmorse/semaphore-docker
